@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="false"
     android:background="#A4CAA8A8"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/resetBtn"
-        android:layout_width="174dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/aldrich"
-        android:text="Restart"
-        android:textSize="18sp"
-        app:backgroundTint="#CA4949"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterBtn"
-        app:layout_constraintVertical_bias="0.801" />
+
 
     <TextView
         android:id="@+id/title"
@@ -37,45 +27,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.029" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="588dp"
-        android:layout_height="374dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:srcCompat="@drawable/welcome" />
-
-    <EditText
-        android:id="@+id/inputText"
-        android:layout_width="321dp"
-        android:layout_height="92dp"
-        android:background="#E67474"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Enter a number from 1 - 100"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textColorLink="#C16767"
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="698dp" />
-
-    <Button
-        android:id="@+id/enterBtn"
-        android:layout_width="270dp"
-        android:layout_height="83dp"
-        android:fontFamily="@font/aldrich"
-        android:text="Enter"
-        android:textSize="24sp"
-        app:backgroundTint="#CA4949"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputText"
-        app:layout_constraintVertical_bias="0.073" />
-
     <TextView
         android:id="@+id/attempt"
         android:layout_width="264dp"
@@ -84,11 +35,78 @@
         android:gravity="center"
         android:text="Welcome"
         android:textSize="24sp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.504" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:srcCompat="@drawable/welcome"
+        android:layout_weight="2"/>
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#E67474"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter a number from 1 - 100"
+        android:inputType="number"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColorLink="#C16767"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <Button
+        android:id="@+id/enterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aldrich"
+        android:text="Enter"
+        android:textSize="24sp"
+        app:backgroundTint="#CA4949"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText"
+        app:layout_constraintVertical_bias="0.103"
+        android:onClick="checkUserInput"
+        android:layout_weight="0.2"/>
+
+
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aldrich"
+        android:text="Restart"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:backgroundTint="#CA4949"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterBtn"
+        app:layout_constraintVertical_bias="0.801"
+        android:onClick="newGame"
+        android:layout_weight="0.1"/>
+
+</LinearLayout>
